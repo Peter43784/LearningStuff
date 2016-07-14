@@ -1,0 +1,14 @@
+﻿
+	        Parent p = new Parent();
+			Child c = new Child();
+			Parent pc = new Child();
+			p.Show();
+			((IMyInterface)p).Show();
+			c.Show();
+			( (IMyInterface)c ).Show();
+			//Should be taken into account
+			pc.Show();
+			( (IMyInterface)pc ).Show();
+			SimpleType st = new SimpleType();
+			IMyInterface mst = st;
+			mst.Show();

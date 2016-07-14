@@ -1,0 +1,8 @@
+﻿MyLinkedListNode<char> linkedList= new MyLinkedListNode<char>( 'A' );
+			linkedList = new MyLinkedListNode<char>( 'B', linkedList );
+			linkedList = new MyLinkedListNode<char>( 'C', linkedList );
+			Node head = new TypeNode<char>( 'a' );
+			head = new TypeNode<int>(1,head );
+			head = new TypeNode<DateTime>(DateTime.Now ,head );
+			Console.WriteLine( head.ToString() );
+			Console.WriteLine(	linkedList.ToString() );

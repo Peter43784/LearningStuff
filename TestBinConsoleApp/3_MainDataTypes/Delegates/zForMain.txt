@@ -1,0 +1,8 @@
+﻿// Delegates: General
+			 FeedbackDelegate.StaticDelegateDemo();
+			 FeedbackDelegate.InstanceDelegateDemo();
+		     FeedbackDelegate.ChainDelegateDemo1( new FeedbackDelegate() );
+// Invocation List
+             InvocationListTest.ShowComponentStatusReport();
+//Closure in C#
+             Closure.Show();

@@ -1,0 +1,16 @@
+﻿IInvariance<string> inv = new InVariance<string>();
+			IInvariance<string> strs = inv;
+			string a1 = "obj a1";
+			string a2 = "obj b2";
+			Console.WriteLine(	a1 + " " + a2 );
+			InVariance<string>.Swap( ref a1,ref a2 );
+			
+			Console.WriteLine( a1 + " " + a2 );
+			
+
+
+			IContrvariance<object> cont = new Contrvariance<object>();
+			IContrvariance<string> str = cont;
+
+			ICovariance<string> cov = new Covariance<string>();
+			ICovariance<object> obj = cov;

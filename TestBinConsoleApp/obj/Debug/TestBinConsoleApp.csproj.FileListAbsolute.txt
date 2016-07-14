@@ -1,0 +1,6 @@
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\bin\Debug\TestBinConsoleApp.exe.config
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\bin\Debug\TestBinConsoleApp.exe
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\bin\Debug\TestBinConsoleApp.pdb
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\obj\Debug\TestBinConsoleApp.csprojResolveAssemblyReference.cache
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\obj\Debug\TestBinConsoleApp.exe
+c:\users\pvozhdai\documents\visual studio 2015\Projects\TestBinConsoleApp\TestBinConsoleApp\obj\Debug\TestBinConsoleApp.pdb

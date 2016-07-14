@@ -1,0 +1,5 @@
+﻿		Console.WriteLine( indexer[true] );
+		    MailManager mm = new MailManager();			
+		    SMS s = new SMS();
+			s.Subscribe( mm );
+			mm.MailReceived( "r@k", "cr@b", "hi" );

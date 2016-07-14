@@ -1,0 +1,80 @@
+ using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Player
+{
+         static int Do(char root, int coordinate ,ref int weight, ref int height, ref int leftBorder, ref int bottom)
+       {
+            switch (root)
+            {
+                case 'U':
+                    height = coordinate;
+                    coordinate = (bottom + height) / 2; 
+                    break;
+                case 'D':
+                    bottom = coordinate;
+                    coordinate = (bottom + height)/2;
+                    break;
+                case 'R':
+                    leftBorder = coordinate;
+                    coordinate = (leftBorder + weight) / 2;
+                    break;
+                case 'L':
+                    weight = coordinate;
+                    coordinate = (leftBorder + weight) / 2;
+                    break;
+            }
+            return coordinate;
+        } 
+    static void Main(string[] args)
+    {
+        string[] inputs;
+        inputs = Console.ReadLine().Split(' ');
+        int W = int.Parse(inputs[0]); // width of the building.
+        int H = int.Parse(inputs[1]); // height of the building.
+        int N = int.Parse(Console.ReadLine()); // maximum number of turns before game over.
+        inputs = Console.ReadLine().Split(' ');
+        int X0 = int.Parse(inputs[0]);
+        int Y0 = int.Parse(inputs[1]);
+        int X = X0;
+        int Y = Y0;  
+        
+
+            int bottom = 0;
+            int top = H;
+            int rightBorder = W;
+            int leftBorder = 0;
+        // game loop
+        while (true)
+        {
+            string bombDir = Console.ReadLine(); // the direction of the bombs from batman's current location (U, UR, R, DR, D, DL, L or UL)
+
+             
+               if (bombDir.Length > 1)
+                {
+                    X = Do(bombDir[1], X, ref rightBorder, ref top, ref leftBorder, ref bottom);
+                    Y= Do(bombDir[0],Y, ref rightBorder, ref top, ref leftBorder, ref bottom);
+                }
+                else if ((bombDir[0] == 'L') || (bombDir[0] == 'R'))
+                {
+                    
+                        X = Do(bombDir[0], X, ref rightBorder, ref top, ref leftBorder, ref bottom);
+                     
+                }
+                else if ((bombDir[0] == 'U') || (bombDir[0] == 'D'))
+                {
+                     
+                    Y = Do(bombDir[0], Y, ref rightBorder, ref top, ref leftBorder, ref bottom);
+                }
+               Console.WriteLine(X+ " " + Y); 
+        }
+    }
+}

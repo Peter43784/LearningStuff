@@ -1,0 +1,107 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static List<int> Contributions(List<int> values, int count)
+        {
+            List<int> payed = new List<int>();
+            List<int> additional = new List<int>();
+            List<int> overheads = new List<int>();
+            int left = 0;
+            int average = count /values.FindAll(v =>v > 0).Count;
+            foreach (var v in values)
+            {
+                if (v == 0)
+                {
+                    additional.Add(0);
+                    payed.Add(0);
+                    continue;
+                }
+
+               var pay = v - average;
+
+                if (pay < 0)
+                {
+                    payed.Add(v);
+                    additional.Add(0);
+                }
+                else
+                {
+                    payed.Add(average);
+                    additional.Add(pay);
+                }
+                
+                
+            }
+
+            left = count - payed.Sum();
+
+              if (left < values.FindAll(v => v > 0).Count)
+            {
+                 int i = 0;
+                while (left !=0)              
+                {
+                    if (additional[i] != 0)
+                    {
+                        payed[i] = payed[i] + 1;
+                        left--;
+                    }
+                    i++;
+                }
+                return payed;
+            }
+
+            if (left != 0)
+            {
+                overheads = Contributions(additional, left);
+                
+            }
+            if (overheads.Count == 0) return payed;
+
+            for (int i = 0; i < payed.Count; i++)
+            {
+                payed[i] += overheads[i];
+            }
+
+            return payed;
+        }
+    static void Main(string[] args)
+    {
+        int N = int.Parse(Console.ReadLine());
+        int C = int.Parse(Console.ReadLine());
+        List<int> values = new List<int>();
+        for (int i = 0; i < N; i++)
+        {
+            int B = int.Parse(Console.ReadLine());
+            values.Add(B);
+        }
+
+        
+            if ( values.Sum() - C < 0)
+            {
+                Console.WriteLine("IMPOSSIBLE");
+            }
+            else
+            {
+                var a = Contributions(values, C);
+                a.Sort();
+
+                foreach (var item in a)
+                {
+                    Console.WriteLine(item);
+                }
+
+
+            }
+
+    }
+}

@@ -1,0 +1,2 @@
+﻿			Console.WriteLine( BitConverter.ToString(     MyEnCoding.Encode( "hi there" ) ));
+			Console.WriteLine( MyEnCoding.Decode( MyEnCoding.Encode( "hi there" ) ) );
